@@ -1,13 +1,13 @@
 # start from base
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
-LABEL maintainer="Prakhar Srivastav <prakhar@prakhar.me>"
+LABEL maintainer="Roshan <roshansahani535@gmail.com>"
+
+ENV DEBIAN_FRONTEND=noninteractive
 
 # install system-wide deps for python and node
-RUN apt-get -yqq update
-RUN apt-get -yqq install python3-pip python3-dev curl gnupg
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
-RUN apt-get install -yq nodejs
+RUN apt-get -yqq update && apt-get -yqq install python3-pip python3-dev curl gnupg
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt-get -yqq install nodejs
 
 # copy our application code
 ADD flask-app /opt/flask-app

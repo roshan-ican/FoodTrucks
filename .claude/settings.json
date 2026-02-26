@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/roshan/Library/Application Support/Code/User/**)"
+    ]
+  }
+}
